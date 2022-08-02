@@ -8,6 +8,7 @@ public class HomePage {
         System.out.println("1. New Order");
         System.out.println("2. View Orders");
         System.out.println("3. Quit");
+        System.out.print("Please enter: ");
     }
 
     public void action() {
@@ -16,13 +17,16 @@ public class HomePage {
         while (!(act.equals("3"))) {
             switch (act) {
                 case "1":
-                    System.out.println("Please order");
+                    OrderPage.showPage();
+                    OrderPage.action(sc);
+                    showPage();
                     break;
                 case "2":
-                    System.out.println("This is orders");
+                    System.out.print("This is orders");
+                    showPage();
                     break;
                 default:
-                    System.out.println("Please re-enter");
+                    System.out.print("Please re-enter: ");
                     showPage();
             }
             act = sc.nextLine();
